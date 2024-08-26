@@ -1,0 +1,18 @@
+body{
+	background-image:url(../img/auto.gif);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.poema{
+background-color:rgba(350, 350, 0, 0.6);
+width: 270px;
+background-size: 100px 250px;
+color: white;
+}
+
+.coso{
+	background-color: rgba(255, 255, 255, 0.6);
+	width: 950px;
+}

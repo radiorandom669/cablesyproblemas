@@ -1,0 +1,16 @@
+body{
+	background-image:url(../img/violeta.gif);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.poema{
+	font-size: 10em;
+	color: whitesmoke;
+
+}
+
+a{
+	text-decoration: none;
+}

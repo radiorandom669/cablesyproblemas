@@ -1,0 +1,50 @@
+body{
+	background-image:url(../img/toca.gif);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+
+.poema{
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 720px;
+	height: 1080px;
+	background-color: black;
+	margin-left: auto;  /* Empuja el div a la derecha */
+	color: whitesmoke;
+
+}
+
+.enlace1{
+	text-decoration: none;
+	color: green;
+}
+
+.enlace2{
+	text-decoration: none;
+	color: yellowgreen;
+}
+
+.enlace3{
+	text-decoration: none;
+	color: red;
+}
+
+.enlace4{
+text-decoration: none;
+color: violet;
+}
+
+.enlace5{
+	text-decoration: none;
+	color: olive;
+}
+
+.enlace99{
+	text-decoration: none;
+	color: yellow;
+}

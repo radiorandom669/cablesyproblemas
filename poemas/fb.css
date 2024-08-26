@@ -1,0 +1,23 @@
+body{
+	background-image:url(../img/maquina.gif);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.poema{
+	font-size: 6.50em;
+	color: whitesmoke;
+
+}
+
+a{
+	text-decoration: none;
+	color: whitesmoke;
+}
+
+.letra{
+	font-size: 2em;
+	text-decoration: none;
+	color: whitesmoke;
+}

@@ -1,0 +1,15 @@
+body{
+	background-image:url(../img/ella.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.poema{
+font-size: 6em;
+font-family: roboto;
+}
+
+.a{
+	color: black;
+}

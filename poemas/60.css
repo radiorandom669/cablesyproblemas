@@ -1,0 +1,15 @@
+body{
+	background-image:url(../img/magen.gif);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+
+.poema{
+	font-size: 0.80em;
+	background-color: black;
+	color:whitesmoke;
+	width: 750px;
+	height: 590px;
+}
