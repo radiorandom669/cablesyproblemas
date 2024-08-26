@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-image: url(7.gif);
+    background-size: cover;
+    overflow-y: auto;
+}
+
+.video-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px; /* Espacio entre videos */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+iframe {
+    width: 100%;
+    height: 450px; /* Ajustar la altura según sea necesario */
+    border: none;
+    border-radius: 10px;
+}
+
+.control {
+    background-image: url(remote.png);
+    background-size: contain;
+}
