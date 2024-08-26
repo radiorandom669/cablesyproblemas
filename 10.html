@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CABLES Y POEMAS</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #yellow;
+    }
+
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>LAS FLECHAS SERÁN TU RUINA O TU SALVACIÓN </h2>	
+
+<canvas id="snakeCanvas" width="400" height="400"></canvas>
+
+<script>
+  const canvas = document.getElementById('snakeCanvas');
+  const ctx = canvas.getContext('2d');
+
+  const boxSize = 20;
+  const canvasSize = 400;
+  const snake = [{ x: 10, y: 10 }];
+  const food = { x: 15, y: 15 };
+  let direction = 'right';
+
+  function draw() {
+    // Dibuja el fondo
+    ctx.fillStyle = '#f0f0f0';
+    ctx.fillRect(0, 0, canvasSize, canvasSize);
+
+    // Dibuja la serpiente
+    ctx.fillStyle = '#00f';
+    snake.forEach(segment => ctx.fillRect(segment.x * boxSize, segment.y * boxSize, boxSize, boxSize));
+
+    // Dibuja la comida
+    ctx.fillStyle = '#f00';
+    ctx.fillRect(food.x * boxSize, food.y * boxSize, boxSize, boxSize);
+  }
+
+  function move() {
+    const head = { ...snake[0] };
+
+    switch (direction) {
+      case 'up':
+        head.y -= 1;
+        break;
+      case 'down':
+        head.y += 1;
+        break;
+      case 'left':
+        head.x -= 1;
+        break;
+      case 'right':
+        head.x += 1;
+        break;
+    }
+
+    snake.unshift(head);
+
+    // Verifica si la serpiente alcanza la comida
+    if (head.x === food.x && head.y === food.y) {
+      // Genera una nueva posición para la comida
+      food.x = Math.floor(Math.random() * (canvasSize / boxSize));
+      food.y = Math.floor(Math.random() * (canvasSize / boxSize));
+    } else {
+      // Si no come, elimina la cola
+      snake.pop();
+    }
+  }
+
+  function checkCollision() {
+    const head = snake[0];
+
+    // Verifica si la serpiente choca con la pared
+    if (head.x < 0 || head.y < 0 || head.x >= canvasSize / boxSize || head.y >= canvasSize / boxSize) {
+      alert('Se acabó el juego: ¡Sos Libre!');
+      resetGame();
+    }
+
+    // Verifica si la serpiente choca consigo misma
+    for (let i = 1; i < snake.length; i++) {
+      if (head.x === snake[i].x && head.y === snake[i].y) {
+        alert('¡Game Over!');
+        resetGame();
+      }
+    }
+  }
+
+  function resetGame() {
+    snake.length = 1;
+    snake[0] = { x: 10, y: 10 };
+    food.x = Math.floor(Math.random() * (canvasSize / boxSize));
+    food.y = Math.floor(Math.random() * (canvasSize / boxSize));
+    direction = 'right';
+  }
+
+  function gameLoop() {
+    move();
+    checkCollision();
+    draw();
+  }
+
+  document.addEventListener('keydown', event => {
+    switch (event.key) {
+      case 'ArrowUp':
+        direction = 'up';
+        break;
+      case 'ArrowDown':
+        direction = 'down';
+        break;
+      case 'ArrowLeft':
+        direction = 'left';
+        break;
+      case 'ArrowRight':
+        direction = 'right';
+        break;
+    }
+  });
+
+  setInterval(gameLoop, 100); // Actualiza el juego cada 100 milisegundos
+</script>
+
+</body>
+</html>

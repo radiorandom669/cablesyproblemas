@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El busca puertas</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: yellow;
+      margin: 0;
+    }
+
+    #minesweeper {
+      display: grid;
+      grid-template-columns: repeat(10, 40px);
+      gap: 2px;
+    }
+
+    .cell {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: red;
+    }
+
+    .mine {
+      background-color: #f00;
+      color: #fff;
+    }
+
+    .revealed {
+      background-color: #ddd;
+    }
+
+    .flagged {
+      background-color: #ccc;
+    }
+
+    .clicked {
+      background-image: url(img/puerta.gif);
+      background-size: contain;
+    }
+
+    #info {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="info">TU DESTINO POR UNOS CLICKS</div>
+<div id="minesweeper"></div>
+
+<script>
+  const gridSize = 10;
+  const mineCount = 15;
+  const minesweeper = document.getElementById('minesweeper');
+  const info = document.getElementById('info');
+  const grid = [];
+  let minesLeft = mineCount;
+
+  function initializeGrid() {
+    for (let i = 0; i < gridSize; i++) {
+      grid[i] = [];
+      for (let j = 0; j < gridSize; j++) {
+        grid[i][j] = { isMine: false, isRevealed: false, count: 0, isFlagged: false };
+      }
+    }
+
+    // Plantar minas de forma aleatoria
+    for (let k = 0; k < mineCount; k++) {
+      let x, y;
+      do {
+        x = Math.floor(Math.random() * gridSize);
+        y = Math.floor(Math.random() * gridSize);
+      } while (grid[x][y].isMine);
+      grid[x][y].isMine = true;
+
+      // Incrementar el contador en las celdas vecinas
+      for (let dx = -1; dx <= 1; dx++) {
+        for (let dy = -1; dy <= 1; dy++) {
+          const nx = x + dx;
+          const ny = y + dy;
+          if (nx >= 0 && nx < gridSize && ny >= 0 && ny < gridSize) {
+            grid[nx][ny].count++;
+          }
+        }
+      }
+    }
+  }
+
+  function revealCell(x, y) {
+    if (x < 0 || x >= gridSize || y < 0 || y >= gridSize || grid[x][y].isRevealed || grid[x][y].isFlagged) {
+      return;
+    }
+
+    const cell = grid[x][y];
+    cell.isRevealed = true;
+
+    if (cell.isMine) {
+      alert('Abriste la puerta correcta! Sos libre!!');
+      resetGame();
+    } else {
+      if (cell.count === 0) {
+        // Si la celda no tiene minas vecinas, revelar las celdas vecinas
+        for (let dx = -1; dx <= 1; dx++) {
+          for (let dy = -1; dy <= 1; dy++) {
+            revealCell(x + dx, y + dy);
+          }
+        }
+      }
+    }
+
+    // Verificar si se ha ganado
+    if (checkWin()) {
+      alert('Que ojete!!!!!!!');
+      resetGame();
+    }
+  }
+
+  function checkWin() {
+    for (let i = 0; i < gridSize; i++) {
+      for (let j = 0; j < gridSize; j++) {
+        if (!grid[i][j].isMine && !grid[i][j].isRevealed) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  function resetGame() {
+    minesLeft = mineCount;
+    initializeGrid();
+    renderGrid();
+  }
+
+  function renderGrid() {
+    minesweeper.innerHTML = '';
+    info.textContent = `Cuantas veces escapaste: ${minesLeft}`;
+
+    for (let i = 0; i < gridSize; i++) {
+      for (let j = 0; j < gridSize; j++) {
+        const cell = grid[i][j];
+        const cellElement = document.createElement('div');
+        cellElement.className = `cell${cell.isRevealed ? ' revealed' : ''}${cell.isFlagged ? ' flagged' : ''}${cell.isClicked ? ' clicked' : ''}`;
+        cellElement.textContent = cell.isRevealed ? (cell.isMine ? '💣' : cell.count || '') : '';
+        cellElement.addEventListener('click', () => {
+          cell.isClicked = true;
+          cellElement.classList.add('clicked');
+          revealCell(i, j);
+        });
+        cellElement.addEventListener('contextmenu', e => {
+          e.preventDefault();
+          toggleFlag(i, j);
+        });
+        minesweeper.appendChild(cellElement);
+      }
+    }
+  }
+
+  function toggleFlag(x, y) {
+    const cell = grid[x][y];
+    if (!cell.isRevealed) {
+      cell.isFlagged = !cell.isFlagged;
+      minesLeft += cell.isFlagged ? -1 : 1;
+      renderGrid();
+    }
+  }
+
+  resetGame();
+</script>
+
+</body>
+</html>

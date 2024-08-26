@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experimento Visual Raro 4</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Impact', sans-serif;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+      color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: colorChange 5s infinite alternate;
+    }
+
+    #container {
+      display: flex;
+      gap: 20px;
+      transform: rotate(45deg);
+    }
+
+    .element {
+      width: 150px;
+      height: 150px;
+      background-color: #ff3399;
+      clip-path: polygon(0% 0%, 100% 25%, 75% 100%, 25% 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      transform: rotate(-45deg);
+      animation: pulse 1s infinite alternate;
+      transition: background-color 0.5s ease-in-out;
+    }
+
+    .element:hover {
+      background-color: #ffcc00;
+    }
+
+    .element img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes pulse {
+      to {
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes colorChange {
+      0% {
+        background: linear-gradient(45deg, yellow, red, violet);
+      }
+      25% {
+        background: linear-gradient(45deg, yellow, black, red);
+      }
+      50% {
+        background: linear-gradient(45deg, #9933cc, #ff9966, #66cccc);
+      }
+      75% {
+        background: linear-gradient(45deg, green, violet, black);
+      }
+      100% {
+        background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <a href="CARRU2/index.html">
+    <div class="element"><img src="img/diabo.gif" alt="Imagen Rara 7"></div>
+    </a>
+    <a href="index.html">
+    <div class="element"><img src="img/cara.gif" alt="Imagen Rara 8"></div>
+    </a>
+    <a href="poemas/compresion.html   ">
+    <div class="element"><img src="img/diabo2.gif" alt="Imagen Rara 9"></div>
+    </a>
+    
+  </div>
+
+</body>
+</html>

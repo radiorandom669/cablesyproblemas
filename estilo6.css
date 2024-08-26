@@ -1,0 +1,9 @@
+body {
+	background-color: black;
+}
+
+.can {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

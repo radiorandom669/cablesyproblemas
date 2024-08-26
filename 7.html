@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CABLES Y POEMAS</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Courier New', monospace;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      transform: rotate(45deg);
+    }
+
+    .element {
+      width: 100px;
+      height: 100px;
+      
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      transform: rotate(-45deg);
+      transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+      background-image: url(img/lata.gif); 
+      background-size: cover;
+      background-position: center;
+    }
+
+    .element:hover {
+      transform: rotate(-45deg) scale(1.2);
+      background-color: green;
+    }
+
+.element4 {
+      width: 100px;
+      height: 100px;
+     
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      transform: rotate(-45deg);
+      transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+      background-image: url(img/memo.gif);
+      background-size: cover;
+      background-position: center;
+    
+    }
+
+    .element4:hover {
+      transform: rotate(-45deg) scale(1.2);
+      background-color: red;
+    }
+
+.element3 {
+      width: 100px;
+      height: 100px;
+    
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      transform: rotate(-45deg);
+      transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+      background-image: url(img/ojo.gif);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .element3:hover {
+      transform: rotate(-45deg) scale(16);
+      background-color: yellow;
+    }
+
+    .element2 {
+      width: 100px;
+      height: 100px;
+  
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      transform: rotate(-45deg);
+      transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+      background-image: url(img/vela.gif); 
+      background-size: cover;
+      background-position: center;
+    }
+
+    .element2:hover {
+      transform: rotate(-45deg) scale(2.5);
+      background-color: #00ffff;
+    }
+
+   
+     footer {
+      background-image: url(img/4dedos.gif);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+      nav{
+      background-image: url(img/4dedos.gif);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <a href="8.html">
+    <div class="element"></div>
+    </a>
+    <a href="xulsolar/index.html">
+    <div class="element2"></div>
+    </a>
+    <a href="videos/index.html">
+    <div class="element3"></div>
+    </a>
+    <div class="element4"></div>
+  </div>
+
+
+  <footer>
+  <br>
+  <br>
+  <br>
+  <br>
+  </footer>
+
+<nav>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</nav>
+
+
+</body>
+</html>
