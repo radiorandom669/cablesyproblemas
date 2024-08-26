@@ -1,0 +1,58 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden; 
+}
+
+
+.container {
+    position: relative; 
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    text-decoration-color: none;
+
+}
+
+.image {
+    transition: transform 0.3 ease;    
+    position: absolute;
+    width: 150px; /* Tamaño ajustable según sea necesario */
+    height: auto;
+    border: 2px solid white; /* Opcional: agregar un borde para visibilidad */
+}
+
+.image:hover {
+    transform: scale(2.5);
+}
+
+.img1 { top: 10%; left: 05%; }
+.img2 { top: 30%; left: 60%; width: 350px; }
+.img3 { top: 50%; left: 10%; }
+.img4 { top: 70%; left: 80%; }
+.img5 { top: 20%; left: 80%; }
+.img6 { top: 60%; left: 40%; }
+.img7 { top: 60%; left: 30%; }
