@@ -1,0 +1,129 @@
+/* Importar fuente MTV */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #ff0055;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.logo {
+    font-size: 2em;
+    letter-spacing: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00ffff;
+}
+
+.hero {
+    background: linear-gradient(45deg, #ff0055, #00ffff);
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #ff0055;
+    font-size: 2.5em;
+}
+
+.poema {
+    background: #333;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.poema h3 {
+    color: #00ffff;
+    margin-top: 0;
+}
+
+footer {
+    background: #ff0055;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label, form input, form textarea, form button {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 2px solid #ff0055;
+    border-radius: 5px;
+}
+
+form button {
+    background: #ff0055;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button:hover {
+    background: #00ffff;
+}
+
+footer {
+    
+}
