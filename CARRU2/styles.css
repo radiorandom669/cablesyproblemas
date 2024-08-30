@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('nube.gif'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1{
+    color:yellow;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.carousel {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+     border: 10px solid #9969;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    
+}
+
+.carousel-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 36px;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+button:focus {
+    outline: none;
+}
+
+audio {
+    margin-top: 20px;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.thumbnails img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+     border: 3px solid transparent;
+}
+
+.thumbnails img:hover {
+    transform: scale(1.1);
+        border: 3px solid #155120;
+}

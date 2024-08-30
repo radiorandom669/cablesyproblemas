@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>musicaRANDOM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>MUSICA HISTORIAS MENTIRAS DERROCHES</h1>
+    <div class="carousel-container">
+        <button id="prev-btn">&#10094;</button>
+        <div class="carousel">
+            <img id="main-image" src="ramon.jpg" alt="Main Image">
+        </div>
+        <button id="next-btn">&#10095;</button>
+    </div>
+    <audio id="audio-player" controls>
+        <source id="audio-source" src="ramones1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="thumbnails">
+        <img src="bad.jpg" alt="Thumbnail 1" data-audio="bad.wav">
+        <img src="moto.jpg" alt="Thumbnail 2" data-audio="moto.wav">
+        <img src="para.jpg" alt="Thumbnail 3" data-audio="para.wav">
+        <img src="ramon.jpg" alt="Thumbnail 3" data-audio="ramones1.wav">
+        <img src="scratch.jpg" alt="Thumbnail 3" data-audio="perri.wav">
+        <img src="vudu.jpg" alt="Thumbnail 3" data-audio="baile.wav">
+        <img src="xtc.jpg" alt="Thumbnail 3" data-audio="xtc-go2.wav">
+
+        <!-- Add more thumbnails as needed -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
